@@ -1,0 +1,10 @@
+<h1>My Blog</h1>
+<% @posts.each do |post| %>
+<h2><%= link_to post.title, post %></h2>
+<div class="entry">
+<%= link_to "Edit", [:edit,post] %>
+<%= button_to "Delete", post ,
+  :confirm => "Confermi cancellazione di #{post.title} ?", :method => :delete %>
+<hr/>
+<% end %>
+<%= link_to "New Post", new_post_path %>
